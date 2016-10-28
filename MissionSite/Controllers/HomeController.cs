@@ -22,7 +22,12 @@ namespace MissionSite.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            List<SelectListItem> subject_options = new List<SelectListItem>();
+            subject_options.Add(new SelectListItem { Text = "Choose One", Selected = true });
+            subject_options.Add(new SelectListItem { Text = "Mission Question", Value = "0" });
+            subject_options.Add(new SelectListItem { Text = "Website Problem", Value = "1" });
+            subject_options.Add(new SelectListItem { Text = "Other", Value = "2"});
+            ViewBag.SubjectOptions = subject_options;
 
             return View();
         }
