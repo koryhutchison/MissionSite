@@ -56,3 +56,7 @@
 #map_format {
     vertical-align: middle;
 }
+
+.breadcrumb {
+   margin-bottom: 0;
+}
