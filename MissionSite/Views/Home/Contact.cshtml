@@ -2,20 +2,15 @@
     ViewBag.Title = "Contact";
 }
 
-<div class="container-fluid">
-    <div class="col-md-4">
-        <h1>Have A Question?</h1>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Have a Question?</h1>
         <p class="lead">Feel free to contact us!</p>
     </div>
-    <div class="col-md-8">
-        <br />
-        <div class="text-center">
-            <p>Email: contact@missionballers.com</p>
-            <p>Phone: (801) 555-5555</p>
-        </div>
-    </div>
 </div>
-<div class="container-fluid" >
+
+
+<div class="container-fluid">
     <div class="col-md-4">
         @using (Html.BeginForm("Contact", "Home", FormMethod.Get, new { @class = "form-group" }))
         {
@@ -42,6 +37,12 @@
     </div>
     <div class="col-md-8" style="text-align: center">
         <iframe width="80%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https:///www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.075945108425!2d-111.65150428502238!3d40.251843479384576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d90bc4aa0b68d%3A0xbf3eb3a3f30fdc4c!2sBrigham+Young+University!5e0!3m2!1sen!2sus!4v1477621290000" id="map_format"></iframe>
+        <br />
+        <br />
+        <div class="well" style="width: 50%; display: block; margin: auto">
+            <p>Email: contact@missionballers.com</p>
+            <p>Phone: (801) 555-5555</p>
+        </div>
     </div>
 </div>
 
