@@ -1,53 +1,51 @@
 ﻿@{
     ViewBag.Title = "Missions";
 }
-<div class="jumbotron">
-    <div class="container">
-        <h1>Mission FAQs</h1>
-    </div>
-</div>
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-sm-12">
+            <h2>Missions</h2>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-2">
-            <br />
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Missions
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li>@Html.ActionLink("Colombia Bogota North", "Index", "Mission", new { mission = "Colombia Bogota North" }, null)</li>
-                    <li>@Html.ActionLink("Brasil Belem", "Index", "Mission", new { mission = "Brasil Belem" }, null)</li>
-                    <li>@Html.ActionLink("Brasil Curitiba", "Index", "Mission", new { mission = "Brasil Curitiba" }, null)</li>
+                    <li>@Html.ActionLink("Colombia Bogota North", "Index", "Mission", new { mission = "Colombia Bogota North" })</li>
+                    <li>@Html.ActionLink("Brasil Belem", "Index", "Mission", new { mission = "Brasil Belem" })</li>
+                    <li>@Html.ActionLink("Brasil Curitiba", "Index", "Mission", new { mission = "Brasil Curitiba" })</li>
                 </ul>
             </div>
         </div>
-        <div class="col-sm-6">
-            <h2>@ViewBag.MissionName</h2>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <strong>Mission President Name:</strong> @ViewBag.MissionPresidentName
-                </div>
-                <div class="panel-body">
-                    <strong>Mission Address:</strong><br /> @Html.Raw(@ViewBag.MissionAddress)
-                </div>
-                <div class="panel-body">
-                     <strong>Language:</strong> @ViewBag.Language
-                </div>
-                <div class="panel-body">
-                    <strong>Climate:</strong> @ViewBag.Climate
-                </div>
-                <div class="panel-body">
-                    <strong>Dominate Religion:</strong> @ViewBag.DominateReligion
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <img src="~/Content/Images/@ViewBag.Symbol" style="max-height:100%; max-width:100%;"/>
+        <div class="col-sm-10">
+            <h2>
+                @ViewBag.MissionName
+            </h2>
+            <h2>
+                @ViewBag.MissionPresidentName
+            </h2>
+            <h2>
+                @ViewBag.MissionAddress
+            </h2>
+            <h2>
+                @ViewBag.Language
+            </h2>
+            <h2>
+                @ViewBag.Climate
+            </h2>
+            <h2>
+                @ViewBag.DominateReligion
+            </h2>
+            <h2>
+                @ViewBag.Symbol
+            </h2>
         </div>
     </div>
-    <br />
     <div class="row">
         <div class="col-sm-12">
             <div id="accordion">
@@ -65,27 +63,11 @@
                     <ul>
                         <li>So good</li>
                         <li>The best</li>
-                        <li>Really good</li>
+                        <li>Real good</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Ask a question</h3>
-                </div>
-                <div class="panel-body">
-                    @Html.TextBox("name", "", new { placeholder = "Your name" })
-                    <br />
-                    <br />
-                    @Html.TextArea("new_question", "", new { placeholder = "Enter your question here" })
-                </div>
-            </div>
-            
+
         </div>
     </div>
 </div>
