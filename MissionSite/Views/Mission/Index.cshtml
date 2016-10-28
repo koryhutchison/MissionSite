@@ -1,11 +1,13 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Missions";
 }
 
-<h2>Missions</h2>
-
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Missions</h2>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-2">
             <div class="dropdown">
@@ -14,13 +16,58 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Colombia Bogota North</a></li>
-                    <li><a href="#">Brasil Belen</a></li>
-                    <li><a href="#">Brasil Curitiba</a></li>
+                    <li>@Html.ActionLink("Colombia Bogota North", "Index", "Mission", new { mission = "Colombia Bogota North" })</li>
+                    <li>@Html.ActionLink("Brasil Belem", "Index", "Mission", new { mission = "Brasil Belem" })</li>
+                    <li>@Html.ActionLink("Brasil Curitiba", "Index", "Mission", new { mission = "Brasil Curitiba" })</li>
                 </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <h2>
+                @ViewBag.MissionName
+            </h2>
+            <h2>
+                @ViewBag.MissionPresidentName
+            </h2>
+            <h2>
+                @ViewBag.MissionAddress
+            </h2>
+            <h2>
+                @ViewBag.Language
+            </h2>
+            <h2>
+                @ViewBag.Climate
+            </h2>
+            <h2>
+                @ViewBag.DominateReligion
+            </h2>
+            <h2>
+                @ViewBag.Symbol
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="accordion">
+                <h3>How much wood?</h3>
+                <div>
+                    <p>HE CHUCKED IT ALL OF IT</p>
+                </div>
+                <h3>What is a mission?</h3>
+                <div>
+                    <p>Something mormons do to get married.</p>
+                </div>
+                <h3>Why go on a mission?</h3>
+                <div>
+                    <p>Because God is </p>
+                    <ul>
+                        <li>So good</li>
+                        <li>The best</li>
+                        <li>Real good</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
-
     </div>
 </div>
