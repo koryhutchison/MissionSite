@@ -1,0 +1,24 @@
+﻿/* Custom CSS */
+
+
+
+/* Landing Page CSS */
+
+#LandingPage {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 225px 0;
+    text-align: center;
+    color: #fff;
+    background-image: url('images/temple.jpg');
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#LandJumbo {
+    background-color: rgba( 128, 128, 128, .5);	
+}
