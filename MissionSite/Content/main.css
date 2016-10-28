@@ -52,3 +52,7 @@
 .text_message{
     max-width: 94%;
 }
+
+#map_format {
+    vertical-align: middle;
+}
