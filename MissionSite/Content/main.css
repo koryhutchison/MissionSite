@@ -22,3 +22,31 @@
 #LandJumbo {
     background-color: rgba( 128, 128, 128, .5);	
 }
+
+/* About Us */
+
+#aboutHeader {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+    background: url('Images/mission.jpeg') no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.brand-heading {
+    font-size: 4rem;
+}
+
+
