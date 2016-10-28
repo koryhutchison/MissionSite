@@ -1,4 +1,4 @@
-﻿/* Custom CSS */
+/* Custom CSS */
 
 
 
@@ -49,4 +49,6 @@
     font-size: 4rem;
 }
 
-
+.text_message{
+    max-width: 94%;
+}
