@@ -1,13 +1,20 @@
 ﻿@{
     ViewBag.Title = "Missions";
 }
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Home", "Index", "Home", null, null)</li>
+    <li>@Html.ActionLink("Missions", "Index", "Mission", new { mission = "Brasil Curitiba" }, null)</li>
+    <li class="active">@ViewBag.MissionName</li>
+</ol>
+
 <div class="jumbotron">
     <div class="container">
         <h1>Mission FAQs</h1>
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-sm-2">
             <br />
@@ -47,24 +54,32 @@
             <img src="~/Content/Images/@ViewBag.Symbol" style="max-height:100%; max-width:100%;" />
         </div>
     </div>
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-sm-12">
-            <h2>
-                Frequently Asked Questions
-            </h2>
-        </div>
+    <hr />
+    <div class="page-header ">
+        <h1>
+            Frequently Asked Questions
+        </h1>
     </div>
-    <br />
-    <div class="row">
+    <div class="row ">
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">I have many questions about missionary service. Who can best answer them?</h3>
                 </div>
                 <div class="panel-body">
-                    Talk with your parents, priesthood leaders, or a trusted leader to help you find answers to your questions. <em>Preach My Gospel</em> and the <em>Missionary Handbook</em> are also great resources. 
+                    Talk with your parents, priesthood leaders, or a trusted leader to help you find answers to your questions. <em>Preach My Gospel</em> and the <em>Missionary Handbook</em> are also great resources.
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Send</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Enter your reply here...">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -73,6 +88,18 @@
                 </div>
                 <div class="panel-body">
                     Work on strengthening your own understanding and testimony of the gospel by praying daily and studying the scriptures, especially the Book of Mormon. Attend your Church meetings. Participate in seminary or institute, if available. You may share the gospel with a friend, go to teaching appointments with the full-time missionaries, or ask recently returned missionaries about their experiences in the mission field. You may also become familiar with <em>Preach My Gospel</em>, especially chapters 1 and 3.
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Send</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Enter your reply here...">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -81,6 +108,18 @@
                 </div>
                 <div class="panel-body">
                     Elder L. Tom Perry explained: “Missionary service is emotionally demanding. Your support system is going to be withdrawn from you as you leave home and go out into the world. … There will be days of rejection and disappointment. Learn now about your emotional limits, and learn how to control your emotions under the circumstances you will face as a missionary” (L. Tom Perry, “Raising the Bar,” Liahona, Nov. 2007, 48).
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Send</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Enter your reply here...">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -89,43 +128,53 @@
                 </div>
                 <div class="panel-body">
                     A missionary's day is filled with activities that help accomplish the missionary purpose of bringing souls to Christ. Read the “Missionary Daily Schedule” to see the activities in a typical day, and study the lessons in chapter 3 of Preach My Gospel to find what missionaries teach. One way to understand day-to-day missionary activities is to watch The District. These video segments show real missionaries, members, and investigators in non-scripted, unrehearsed, actual missionary situations.
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Send</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Enter your reply here...">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <div class="row">
+    <hr />
+    <div class="page-header ">
+        <h1>
+            Ask us a question
+        </h1>
+    </div>
+    <div class="row ">
         <div class="col-sm-12">
-            <h2>
-                Ask us a new question
-            </h2>
+            @using (Html.BeginForm("Index", "Mission", FormMethod.Get, new { @class = "form-group" }))
+            {
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Name</h3>
+                        @Html.TextBox("Name", "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Email</h3>
+                        @Html.TextBox("Email", "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Message</h3>
+                        @Html.TextArea("Message", "", new { @class = "form-control text_message", rows = "4" })
+                    </div>
+                </div>
+                <br />
+                <p>
+                    <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
+                </p>
+            }
         </div>
-    </div>
-    <br />
-    <div class="row">
-        @using (Html.BeginForm("Index", "Mission", FormMethod.Get, new { @class = "form-group" }))
-        {
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Name</h3>
-                    @Html.TextBox("Name", "", new { @class = "form-control" })
-                </div>
-                <div class="col-md-6">
-                    <h3>Email</h3>
-                    @Html.TextBox("Email", "", new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Message</h3>
-                    @Html.TextArea("Message", "", new { @class = "form-control text_message", rows = "4" })
-                </div>
-            </div>
-            <br />
-            <p>
-                <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
-            </p>
-        }
     </div>
 </div>
