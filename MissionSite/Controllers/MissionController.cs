@@ -31,7 +31,7 @@ namespace MissionSite.Controllers
                     ViewBag.DominateReligion = "Catholic";
                     ViewBag.Symbol = "brasil_belem.png";
                     break;
-                case "Brasil Curitiba":
+                default: // "Brasil Curitiba":
                     ViewBag.MissionName = "Brasil Curitiba";
                     ViewBag.MissionPresidentName = "President Douglas K. Hart";
                     ViewBag.MissionAddress = "Escritório da Missão Brasil Curitiba <br> Av. Iguaçu 1460 <br> Bairro Água Verde<br>CEP: 80250-190 <br> Curitiba –PR";
@@ -45,6 +45,11 @@ namespace MissionSite.Controllers
             return View();
         }
 
+    
+        public ActionResult Contact()
+        {
+            return View();
+        }
         
 
     }

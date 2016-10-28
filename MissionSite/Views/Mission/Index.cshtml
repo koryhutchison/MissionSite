@@ -33,7 +33,7 @@
                     <strong>Mission Address:</strong><br /> @Html.Raw(@ViewBag.MissionAddress)
                 </div>
                 <div class="panel-body">
-                     <strong>Language:</strong> @ViewBag.Language
+                    <strong>Language:</strong> @ViewBag.Language
                 </div>
                 <div class="panel-body">
                     <strong>Climate:</strong> @ViewBag.Climate
@@ -44,31 +44,16 @@
             </div>
         </div>
         <div class="col-sm-4">
-            <img src="~/Content/Images/@ViewBag.Symbol" style="max-height:100%; max-width:100%;"/>
+            <img src="~/Content/Images/@ViewBag.Symbol" style="max-height:100%; max-width:100%;" />
         </div>
     </div>
     <br />
+    <br />
     <div class="row">
         <div class="col-sm-12">
-            <div id="accordion">
-                <h3>How much wood?</h3>
-                <div>
-                    <p>HE CHUCKED IT ALL OF IT</p>
-                </div>
-                <h3>What is a mission?</h3>
-                <div>
-                    <p>Something mormons do to get married.</p>
-                </div>
-                <h3>Why go on a mission?</h3>
-                <div>
-                    <p>Because God is </p>
-                    <ul>
-                        <li>So good</li>
-                        <li>The best</li>
-                        <li>Really good</li>
-                    </ul>
-                </div>
-            </div>
+            <h2>
+                Frequently Asked Questions
+            </h2>
         </div>
     </div>
     <br />
@@ -76,16 +61,71 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Ask a question</h3>
+                    <h3 class="panel-title">I have many questions about missionary service. Who can best answer them?</h3>
                 </div>
                 <div class="panel-body">
-                    @Html.TextBox("name", "", new { placeholder = "Your name" })
-                    <br />
-                    <br />
-                    @Html.TextArea("new_question", "", new { placeholder = "Enter your question here" })
+                    Talk with your parents, priesthood leaders, or a trusted leader to help you find answers to your questions. <em>Preach My Gospel</em> and the <em>Missionary Handbook</em> are also great resources. 
                 </div>
             </div>
-            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">How can I best prepare spiritually to be a missionary?</h3>
+                </div>
+                <div class="panel-body">
+                    Work on strengthening your own understanding and testimony of the gospel by praying daily and studying the scriptures, especially the Book of Mormon. Attend your Church meetings. Participate in seminary or institute, if available. You may share the gospel with a friend, go to teaching appointments with the full-time missionaries, or ask recently returned missionaries about their experiences in the mission field. You may also become familiar with <em>Preach My Gospel</em>, especially chapters 1 and 3.
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">How can I best prepare emotionally to be a missionary?</h3>
+                </div>
+                <div class="panel-body">
+                    Elder L. Tom Perry explained: “Missionary service is emotionally demanding. Your support system is going to be withdrawn from you as you leave home and go out into the world. … There will be days of rejection and disappointment. Learn now about your emotional limits, and learn how to control your emotions under the circumstances you will face as a missionary” (L. Tom Perry, “Raising the Bar,” Liahona, Nov. 2007, 48).
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">What is a typical day for a missionary like?</h3>
+                </div>
+                <div class="panel-body">
+                    A missionary's day is filled with activities that help accomplish the missionary purpose of bringing souls to Christ. Read the “Missionary Daily Schedule” to see the activities in a typical day, and study the lessons in chapter 3 of Preach My Gospel to find what missionaries teach. One way to understand day-to-day missionary activities is to watch The District. These video segments show real missionaries, members, and investigators in non-scripted, unrehearsed, actual missionary situations.
+                </div>
+            </div>
         </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>
+                Ask us a new question
+            </h2>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        @using (Html.BeginForm("Index", "Mission", FormMethod.Get, new { @class = "form-group" }))
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Name</h3>
+                    @Html.TextBox("Name", "", new { @class = "form-control" })
+                </div>
+                <div class="col-md-6">
+                    <h3>Email</h3>
+                    @Html.TextBox("Email", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Message</h3>
+                    @Html.TextArea("Message", "", new { @class = "form-control text_message", rows = "4" })
+                </div>
+            </div>
+            <br />
+            <p>
+                <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
+            </p>
+        }
     </div>
 </div>
