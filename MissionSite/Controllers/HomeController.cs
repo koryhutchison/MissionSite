@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MissionSite.Models;
+using MissionSite.DAL;
 
 namespace MissionSite.Controllers
 {
     public class HomeController : Controller
     {
+        private MissionFAQsContext db = new MissionFAQsContext();
+
         public ActionResult Index()
         {
             return View();
@@ -34,6 +41,33 @@ namespace MissionSite.Controllers
 
         public ActionResult Login()
         {
+            return View();
+        }
+
+        //verify their login, and send them to the screen if they are in our database. if not, show an error message
+        [HttpPost]
+        public ActionResult Login(FormCollection form)
+        {
+            IEnumerable<Users> find_user = db.Database.SqlQuery<Users>("select * from Users where UserEmail = '" + form["Email"].ToString() + "';");
+
+            try
+            {
+                Users current_user = db.User.Find(find_user.First().UserID);
+                
+                if (current_user != null)
+                {
+                    if (current_user.UserPassword == form["Password"].ToString())
+                    {
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+            }
+            catch
+            {
+                ViewBag.ErrorMessage = "Invalid Email / Password.";
+            }
+
             return View();
         }
     }
