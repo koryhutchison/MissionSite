@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using MissionSite.DAL;
 
 namespace MissionSite
 {
@@ -12,6 +14,8 @@ namespace MissionSite
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<MissionFAQsContext>(null);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
