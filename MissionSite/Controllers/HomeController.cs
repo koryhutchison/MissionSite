@@ -1,4 +1,20 @@
-﻿using MissionSite.DAL;
+﻿
+/*
+ * This is Project 2
+ * A Mission Site to have some information and questions
+ * 
+ * created by group 12 of section 2
+ * 
+ * Brett Adamson
+ * Kory Hutchison
+ * Nathan Marrs
+ * Alex Pratt
+ *
+ * 
+ * */
+
+
+using MissionSite.DAL;
 using MissionSite.Models;
 using System;
 using System.Collections.Generic;
@@ -46,7 +62,6 @@ namespace MissionSite.Controllers
 
         //verify their login, and send them to the screen if they are in our database. if not, show an error message
         [HttpPost]
-
         public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
             IEnumerable<Users> find_user = db.Database.SqlQuery<Users>("select * from Users where UserEmail = '" + form["Email"].ToString() + "';");
@@ -60,6 +75,7 @@ namespace MissionSite.Controllers
                     if (current_user.UserPassword == form["Password"].ToString())
                     {
                         FormsAuthentication.SetAuthCookie(current_user.UserEmail, rememberMe);
+                        ViewBag.UserID = current_user.UserID;
                         return RedirectToAction("Index", "Home");
                     }
                 }

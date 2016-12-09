@@ -55,6 +55,7 @@ namespace MissionSite.Controllers
                 db.User.Add(users);
                 db.SaveChanges();
                 FormsAuthentication.SetAuthCookie(users.UserEmail, rememberMe);
+                ViewBag.UserID = users.UserID;
                 return RedirectToAction("Index", "Home");
             }
 
