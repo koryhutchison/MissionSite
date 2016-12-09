@@ -48,7 +48,7 @@ namespace MissionSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MissionQuestionID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
+        public ActionResult Create([Bind(Include = "MissionQuestionsID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace MissionSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MissionQuestionID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
+        public ActionResult Edit([Bind(Include = "MissionQuestionsID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
         {
             if (ModelState.IsValid)
             {

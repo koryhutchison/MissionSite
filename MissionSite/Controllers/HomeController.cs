@@ -23,11 +23,10 @@ namespace MissionSite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
+        //This is the Contact method that has the list of options for the dropdown list.
         public ActionResult Contact()
         {
             List<SelectListItem> subject_options = new List<SelectListItem>();
