@@ -14,10 +14,10 @@
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\WebGrease.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\System.Web.Mvc.xml
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\Antlr3.Runtime.pdb
-\\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\obj\Debug\MissionSite.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\obj\Debug\MissionSite.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\obj\Debug\MissionSite.pdb
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\EntityFramework.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\EntityFramework.SqlServer.dll
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\EntityFramework.xml
 \\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\Visual Studio 2013\Projects\MissionSite\MissionSite\obj\Debug\MissionSite.csprojResolveAssemblyReference.cache

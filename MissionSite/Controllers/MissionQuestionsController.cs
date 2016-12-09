@@ -8,112 +8,111 @@ using System.Web;
 using System.Web.Mvc;
 using MissionSite.DAL;
 using MissionSite.Models;
-using System.Web.Security;
 
 namespace MissionSite.Controllers
 {
-    public class UsersController : Controller
+    [Authorize]
+    public class MissionQuestionsController : Controller
     {
         private MissionFAQsContext db = new MissionFAQsContext();
 
-        // GET: Users
+        // GET: MissionQuestions
         public ActionResult Index()
         {
-            return View(db.User.ToList());
+            return View(db.MissionQuestion.ToList());
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(decimal id)
+        // GET: MissionQuestions/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Users users = db.User.Find(id);
-            if (users == null)
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+            if (missionQuestions == null)
             {
                 return HttpNotFound();
             }
-            return View(users);
+            return View(missionQuestions);
         }
 
-        // GET: Users/Create
+        // GET: MissionQuestions/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
+        // POST: MissionQuestions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,UserEmail,UserPassword,UserFirstName,UserLastName")] Users users, bool rememberMe = false)
+        public ActionResult Create([Bind(Include = "MissionQuestionID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
         {
             if (ModelState.IsValid)
             {
-                db.User.Add(users);
-                db.SaveChanges();
-                FormsAuthentication.SetAuthCookie(users.UserEmail, rememberMe);
-                return RedirectToAction("Index", "Home");
-            }
-
-            return View(users);
-        }
-
-        // GET: Users/Edit/5
-        public ActionResult Edit(decimal id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Users users = db.User.Find(id);
-            if (users == null)
-            {
-                return HttpNotFound();
-            }
-            return View(users);
-        }
-
-        // POST: Users/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,UserEmail,UserPassword,UserFirstName,UserLastName")] Users users)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(users).State = EntityState.Modified;
+                db.MissionQuestion.Add(missionQuestions);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(users);
+
+            return View(missionQuestions);
         }
 
-        // GET: Users/Delete/5
-        public ActionResult Delete(decimal id)
+        // GET: MissionQuestions/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Users users = db.User.Find(id);
-            if (users == null)
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+            if (missionQuestions == null)
             {
                 return HttpNotFound();
             }
-            return View(users);
+            return View(missionQuestions);
         }
 
-        // POST: Users/Delete/5
+        // POST: MissionQuestions/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "MissionQuestionID,MissionID,UserID,Question,Answer")] MissionQuestions missionQuestions)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(missionQuestions).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(missionQuestions);
+        }
+
+        // GET: MissionQuestions/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+            if (missionQuestions == null)
+            {
+                return HttpNotFound();
+            }
+            return View(missionQuestions);
+        }
+
+        // POST: MissionQuestions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(decimal id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Users users = db.User.Find(id);
-            db.User.Remove(users);
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+            db.MissionQuestion.Remove(missionQuestions);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

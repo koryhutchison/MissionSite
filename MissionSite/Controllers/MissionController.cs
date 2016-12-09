@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace MissionSite.Controllers
 {
-    [Authorize]
     public class MissionController : Controller
     {
         private MissionFAQsContext db = new MissionFAQsContext();

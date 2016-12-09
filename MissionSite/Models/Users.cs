@@ -12,7 +12,7 @@ namespace MissionSite.Models
     public class Users
     {
         [Key]
-        public decimal UserID { get; set; }
+        public int UserID { get; set; }
 
         [Required(ErrorMessage = "Email is required")]
         [DisplayName("Email")]

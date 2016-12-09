@@ -11,10 +11,9 @@ namespace MissionSite.Models
     public class Missions
     {
         [Key]
-        public decimal MissionID { get; set; }
+        public int MissionID { get; set; }
         public string MissionName { get; set; }
-        public string MissionPresidentsFirstName { get; set; }
-        public string MissionPresidentsLastName { get; set; }
+        public string MissionPresidentsName { get; set; }
         public string MissionAddress { get; set; }
         public string MissionLanguage { get; set; }
         public string MissionClimate { get; set; }
