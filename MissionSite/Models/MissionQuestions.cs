@@ -11,9 +11,9 @@ namespace MissionSite.Models
     public class MissionQuestions
     {
         [Key]
-        public int MissionQuestionID { get; set; }
-        public int MissionID { get; set; }
-        public int UserID { get; set; }
+        public decimal MissionQuestionID { get; set; }
+        public decimal MissionID { get; set; }
+        public decimal UserID { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; }
     }

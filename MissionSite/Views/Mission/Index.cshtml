@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MissionSite.Models.Missions>
+@{
     ViewBag.Title = "Missions";
 }
 
@@ -30,29 +31,34 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-6">
-            <h2>@ViewBag.MissionName</h2>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <strong>Mission President Name:</strong> @ViewBag.MissionPresidentName
-                </div>
-                <div class="panel-body">
-                    <strong>Mission Address:</strong><br /> @Html.Raw(@ViewBag.MissionAddress)
-                </div>
-                <div class="panel-body">
-                    <strong>Language:</strong> @ViewBag.Language
-                </div>
-                <div class="panel-body">
-                    <strong>Climate:</strong> @ViewBag.Climate
-                </div>
-                <div class="panel-body">
-                    <strong>Dominate Religion:</strong> @ViewBag.DominateReligion
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6">
+                <h2>@ViewBag.MissionName</h2>
+                <div class="panel panel-default">
+                    @Html.HiddenFor(m => item.MissionID)
+                    <div class="panel-body">
+                        <strong>Mission President Name:</strong> @Html.DisplayFor(m => item.MissionPresidentsFirstName) @Html.DisplayFor(m => item.MissionPresidentsLastName)
+                    </div>
+                    <div class="panel-body">
+                        <strong>Mission Address:</strong><br /> @Html.Raw(item.MissionAddress)
+                    </div>
+                    <div class="panel-body">
+                        <strong>Language:</strong> @Html.DisplayFor(m => item.MissionLanguage)
+                    </div>
+                    <div class="panel-body">
+                        <strong>Climate:</strong> @Html.DisplayFor(m => item.MissionClimate)
+                    </div>
+                    <div class="panel-body">
+                        <strong>Dominate Religion:</strong> @Html.DisplayFor(m => item.MissionDominantReligion)
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <img src="~/Content/Images/@ViewBag.Symbol" style="max-height:100%; max-width:100%;" />
-        </div>
+            <div class="col-sm-4">
+                <img src="~/Content/Images/@Html.DisplayFor(m => item.MissionSymbol)" style="max-height:100%; max-width:100%;" />
+            </div>
+        }
+        
     </div>
     <hr />
     <div class="page-header ">
