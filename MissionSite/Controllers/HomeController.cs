@@ -72,11 +72,14 @@ namespace MissionSite.Controllers
 
                 if (current_user != null)
                 {
-                    if (current_user.UserPassword == form["Password"].ToString())
+                    if (current_user.UserPassword.Equals(form["Password"].ToString()))
                     {
                         FormsAuthentication.SetAuthCookie(current_user.UserEmail, rememberMe);
-                        ViewBag.UserID = current_user.UserID;
                         return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ViewBag.ErrorMessage = "Invalid Email / Password.";
                     }
                 }
             }
